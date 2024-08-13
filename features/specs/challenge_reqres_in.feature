@@ -26,3 +26,21 @@ Funcionalidade: Fluxo completo do challenge reqres in
     Quando forneço as informações de acordo com o formato requerido pelo serviço de criação de pessoa.
     Então deve se ter a confirmação do cadastro de pessoa física
     E o retorno da requisição deve seguir o contrato JSON esperado
+
+  @post_register_users
+  Cenario: Realizar uma requisição POST para registro de usuarios na plataforma Regres In
+    E possuo um payload valido para registro de usuario
+    Quando forneço as informações de acordo com o formato requerido pelo serviço de criação dos usuarios.
+    Então deve se ter a confirmação do usuario da pessoa cadastrado no sistema
+    E o retorno da requisição deve seguir o contrato JSON esperado
+
+    Esquema do Cenário: Validar o registro de usuario somente alguns objetos preenchidos
+      E que o campo "<field>" não esteja preenchido no payload de registro
+      Quando forneço as informações de acordo com o formato requerido pelo serviço de criação dos usuarios.
+      Então o sistema não prossegue com a solicitação retornando a mensagem de error "<message_error>" e o status <code>
+      E o retorno da requisição deve seguir o contrato JSON esperado
+
+      Exemplos:
+        | field    | code|       message_error       |
+        | email    | 400  | Missing email or username |
+        | password | 400  | Missing password          |

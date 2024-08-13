@@ -1,0 +1,12 @@
+{
+    "description": "Validate message without mandatory field email",
+    "type": "object",
+    "properties": {
+      "error": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "error"
+    ]
+  }

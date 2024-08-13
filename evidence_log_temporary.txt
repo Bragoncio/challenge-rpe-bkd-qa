@@ -1,40 +1,30 @@
 
- Challenge Reqres Log: 2024-08-12 23:04:55 -0300 - URL Request: https://reqres.in/api/users 
+ Enviado o payload sem o campo password 
 
- Challenge Reqres Log: 2024-08-12 23:04:55 -0300 - Method Request: POST 
+ Challenge Reqres Log: 2024-08-13 20:22:49 -0300 - URL Request: https://reqres.in/api/register 
 
- Challenge Reqres Log: 2024-08-12 23:04:55 -0300 - DateHour Request: 2024-08-12 23:04:53 +0000 
+ Challenge Reqres Log: 2024-08-13 20:22:49 -0300 - Method Request: POST 
 
- Challenge Reqres Log: 2024-08-12 23:04:55 -0300 - Payload Enviado: {
-  "name": "morpheus",
-  "job": "leader"
+ Challenge Reqres Log: 2024-08-13 20:22:49 -0300 - DateHour Request: 2024-08-13 20:22:50 +0000 
+
+ Challenge Reqres Log: 2024-08-13 20:22:49 -0300 - Payload Enviado: {
+  "email": "eve.holt@reqres.in"
 } 
 
- Challenge Reqres Log: 2024-08-12 23:04:55 -0300 - HTTP Code Esperado: 201 - HTTP Code Recebido: 201 
+ Challenge Reqres Log: 2024-08-13 20:22:49 -0300 - HTTP Code Esperado: 400 - HTTP Code Recebido: 400 
 
- Challenge Reqres Log: 2024-08-12 23:04:55 -0300 - Response: {
-  "name": "morpheus",
-  "job": "leader",
-  "id": "152",
-  "createdAt": "2024-08-13T02:04:53.699Z"
+ Challenge Reqres Log: 2024-08-13 20:22:49 -0300 - Response: {
+  "error": "Missing password"
 } 
 
- Validação do Create realizada com sucesso 
+ Challenge Reqres Log: 2024-08-13 20:22:49 -0300 - iniciando a verificação do contrato. 
 
- Challenge Reqres Log: 2024-08-12 23:04:55 -0300 - iniciando a verificação do contrato. 
+ Challenge Reqres Log: 2024-08-13 20:22:49 -0300 - Verificação do contrato - Garantindo que as chaves esperadas coincidam com as chaves recebidas. 
 
- Challenge Reqres Log: 2024-08-12 23:04:55 -0300 - Verificação do contrato - Garantindo que as chaves esperadas coincidam com as chaves recebidas. 
-
- Challenge Reqres Log: 2024-08-12 23:04:55 -0300 - Verificação do contrato - Campos esperados no contrato: [
-  "name",
-  "job",
-  "id",
-  "createdAt"
+ Challenge Reqres Log: 2024-08-13 20:22:49 -0300 - Verificação do contrato - Campos esperados no contrato: [
+  "error"
 ] 
 
- Challenge Reqres Log: 2024-08-12 23:04:55 -0300 - Verificação do contrato - Campos recebido do response: [
-  "name",
-  "job",
-  "id",
-  "createdAt"
+ Challenge Reqres Log: 2024-08-13 20:22:49 -0300 - Verificação do contrato - Campos recebido do response: [
+  "error"
 ] 

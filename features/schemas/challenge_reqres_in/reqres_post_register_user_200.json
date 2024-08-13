@@ -1,0 +1,16 @@
+{
+    "description": "Validate sucess register user POST",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "token": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "token"
+    ]
+  }
