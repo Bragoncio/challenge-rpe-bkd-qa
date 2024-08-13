@@ -40,3 +40,83 @@ def request_parse_json(request, message = "Response")
         log.puts("\n #{message} \n")
       end
   end
+
+  def log_request_details(request)
+    log_data("Challenge Reqres Log: #{Time.now} - URL Request: #{request.request.last_uri}")
+    log_data("Challenge Reqres Log: #{Time.now} - Method Request: #{request.request.http_method.to_s.split("::")[2].upcase}")
+    log_data("Challenge Reqres Log: #{Time.now} - DateHour Request: #{formatted_date_time(request.headers["date"])}")
+  end
+
+  def verify_status_code_request(request, expect_value)
+    log_request_details(request)
+
+    if request.request.options[:body].blank?
+      log_data("Challenge Reqres Log: #{Time.now} - A requisição não possui payload")
+    else
+      log_data("Challenge Reqres Log: #{Time.now} - Payload Enviado: #{loggable_payload(request.request.options[:body])}")
+    end
+
+    log_data("Challenge Reqres Log: #{Time.now} - HTTP Code Esperado: #{expect_value} - HTTP Code Recebido: #{request.code}")
+
+    expect(request.code).to eq(expect_value)
+
+  rescue RSpec::Expectations::ExpectationNotMetError => e
+    log_error_response(request)
+    raise e
+  end
+
+#Converte Data e hora em String para Time subtraindo 3 horas
+  def formatted_date_time(date_string)
+    Time.parse(date_string) - 10800
+  end
+
+#Converter o payload enviado no body para um formato Json string formatado
+  def loggable_payload(payload)
+    JSON.pretty_generate(JSON.parse(payload))
+  rescue JSON::ParserError
+    payload
+  end
+
+#Registra informações relacionado a uma resposta de erro no log
+  def log_error_response(request)
+    response_error = loggable_payload(request.body) if request.request.options[:body].to_s != '' || request.parsed_response != nil
+    log_data("Challenge Reqres Log: #{Time.now} - Response de Error: #{response_error}")
+  end
+
+#Validar o response se atende o esquema Json
+def validate_json_schema(response, schema)
+  JSON::Validator.validate!(schema, response)
+end
+
+def load_contract(contract_name)
+  JSON.parse(File.read("#{SCHEMA_PATH}/#{contract_name}.json"))
+rescue StandardError => e
+  raise ArgumentError, "Challenge Reqres Log: #{Time.now} - Não foi possivel carregar o contrato: #{e.message}"
+end
+
+
+def verify_contract(response, schema)
+  log_data("Challenge Reqres Log: #{Time.now} - iniciando a verificação do contrato.")
+
+  begin
+  response_validate_contract =  expect(response).to match_json_schema(schema)
+  rescue RSpec::Expectations::ExpectationNotMetError => error_schema
+   raise ArgumentError, "Challenge Reqres Log: #{Time.now} - erro encontrado: #{error_schema}"
+  end
+
+  log_data("Challenge Reqres Log: #{Time.now} - Verificação do contrato - Garantindo que as chaves esperadas coincidam com as chaves recebidas.")
+  schema_contract = load_contract(schema)
+  begin
+    @contract_field = schema_contract["properties"].keys
+    @response_field = response.keys
+  rescue => exception
+    @contract_field = schema_contract['items']['properties'].keys
+    @response_field = response[0].keys
+  end
+
+  log_data("Challenge Reqres Log: #{Time.now} - Verificação do contrato - Campos esperados no contrato: #{JSON.pretty_generate(@contract_field)}")
+  log_data("Challenge Reqres Log: #{Time.now} - Verificação do contrato - Campos recebido do response: #{JSON.pretty_generate(@response_field)}")
+
+  compare_fields = @contract_field - @response_field
+  raise ArgumentError, ("Challenge Reqres Log: #{Time.now} - erro encontrado - Divergências nos campos do contrato: #{JSON.pretty_generate(compare_fields)}") if compare_fields != []
+end
