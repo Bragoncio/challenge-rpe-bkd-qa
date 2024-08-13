@@ -1,6 +1,6 @@
 source "https://rubygems.org" do
 
-  gem 'cucumber', '~> 3'
+  gem 'cucumber'
   gem 'faker'
   gem 'httparty'
   gem "logger"
