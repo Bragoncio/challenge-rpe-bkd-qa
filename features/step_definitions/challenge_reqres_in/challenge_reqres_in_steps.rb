@@ -97,3 +97,15 @@ Então('deve-se ter a confirmação da atualização parcial do usuário no sist
   log_data("Validação do Get realizado com sucesso")
   @contract_schema = "challenge_reqres_in/reqres_patch_user_200"
 end
+
+Quando('eu realizo uma requisição DELETE com o ID do usuário') do
+  @response = ChallengeRegresInClient.new.validate_delete_user_regres(@user_id)
+end
+
+Então('deve-se ter a confirmação da remoção do usuário no sistema') do
+  verify_status_code_request(@response, 204)
+end
+
+E('o retorno da requisição deve confirmar que o usuário foi excluído') do
+  pending # Write code here that turns the phrase above into concrete actions
+end

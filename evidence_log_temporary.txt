@@ -1,55 +1,32 @@
 
- Challenge Reqres Log: 2024-08-13 21:40:47 -0300 - URL Request: https://reqres.in/api/users 
+ Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - URL Request: https://reqres.in/api/users 
 
- Challenge Reqres Log: 2024-08-13 21:40:47 -0300 - Method Request: POST 
+ Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - Method Request: POST 
 
- Challenge Reqres Log: 2024-08-13 21:40:47 -0300 - DateHour Request: 2024-08-13 21:40:48 +0000 
+ Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - DateHour Request: 2024-08-13 22:01:01 +0000 
 
- Challenge Reqres Log: 2024-08-13 21:40:47 -0300 - Payload Enviado: {
+ Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - Payload Enviado: {
   "name": "morpheus",
   "job": "leader"
 } 
 
- Challenge Reqres Log: 2024-08-13 21:40:47 -0300 - HTTP Code Esperado: 201 - HTTP Code Recebido: 201 
+ Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - HTTP Code Esperado: 201 - HTTP Code Recebido: 201 
 
- Challenge Reqres Log: 2024-08-13 21:40:47 -0300 - Response: {
+ Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - Response: {
   "name": "morpheus",
   "job": "leader",
-  "id": "149",
-  "createdAt": "2024-08-14T00:40:48.624Z"
+  "id": "281",
+  "createdAt": "2024-08-14T01:01:01.335Z"
 } 
 
  Validação do Create realizada com sucesso 
 
- Challenge Reqres Log: 2024-08-13 21:40:48 -0300 - URL Request: https://reqres.in/api/register/149 
+ Challenge Reqres Log: 2024-08-13 22:01:01 -0300 - URL Request: https://reqres.in/api/register/281 
 
- Challenge Reqres Log: 2024-08-13 21:40:48 -0300 - Method Request: PUT 
+ Challenge Reqres Log: 2024-08-13 22:01:01 -0300 - Method Request: DELETE 
 
- Challenge Reqres Log: 2024-08-13 21:40:48 -0300 - DateHour Request: 2024-08-13 21:40:49 +0000 
+ Challenge Reqres Log: 2024-08-13 22:01:01 -0300 - DateHour Request: 2024-08-13 22:01:01 +0000 
 
- Challenge Reqres Log: 2024-08-13 21:40:48 -0300 - Payload Enviado: {
-  "job": "QAS Specialist"
-} 
+ Challenge Reqres Log: 2024-08-13 22:01:01 -0300 - A requisição não possui payload 
 
- Challenge Reqres Log: 2024-08-13 21:40:48 -0300 - HTTP Code Esperado: 200 - HTTP Code Recebido: 200 
-
- Challenge Reqres Log: 2024-08-13 21:40:48 -0300 - Response: {
-  "job": "QAS Specialist",
-  "updatedAt": "2024-08-14T00:40:49.171Z"
-} 
-
- Validação do Get realizado com sucesso 
-
- Challenge Reqres Log: 2024-08-13 21:40:48 -0300 - iniciando a verificação do contrato. 
-
- Challenge Reqres Log: 2024-08-13 21:40:48 -0300 - Verificação do contrato - Garantindo que as chaves esperadas coincidam com as chaves recebidas. 
-
- Challenge Reqres Log: 2024-08-13 21:40:48 -0300 - Verificação do contrato - Campos esperados no contrato: [
-  "job",
-  "updatedAt"
-] 
-
- Challenge Reqres Log: 2024-08-13 21:40:48 -0300 - Verificação do contrato - Campos recebido do response: [
-  "job",
-  "updatedAt"
-] 
+ Challenge Reqres Log: 2024-08-13 22:01:01 -0300 - HTTP Code Esperado: 204 - HTTP Code Recebido: 204 

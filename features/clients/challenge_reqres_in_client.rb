@@ -28,6 +28,10 @@ class ChallengeRegresInClient < ChallengeRegresInRequest
       return response_request
     end
 
+    def validate_delete_user_regres(user_id)
+      response_request = delete_user_regres(user_id)
+      return response_request
+    end
 
 
     def contract_schema_register_user(schema)

@@ -90,3 +90,18 @@ Funcionalidade: Fluxo completo do challenge reqres in
     Então deve-se ter a confirmação da atualização parcial do usuário no sistema
     E o retorno da requisição deve seguir o contrato JSON esperado
 
+  ##################################################################################################
+  #   Patch Users                                                                            #
+  ##################################################################################################
+
+  @delete_user_by_id
+  Cenario: Realizar uma requisição DELETE para remover um usuário por ID na plataforma Regres In
+    E possuo um payload valido para criação de pessoa
+    E forneço as informações de acordo com o formato requerido pelo serviço de criação de pessoa.
+    E deve se ter a confirmação do cadastro de pessoa física
+    E que eu possuo um ID válido de um usuário
+    Quando eu realizo uma requisição DELETE com o ID do usuário
+    Então deve-se ter a confirmação da remoção do usuário no sistema
+    E o retorno da requisição deve confirmar que o usuário foi excluído
+
+

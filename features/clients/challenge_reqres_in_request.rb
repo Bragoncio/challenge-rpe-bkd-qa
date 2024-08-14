@@ -41,6 +41,12 @@ class ChallengeRegresInRequest
       execute_put(params)
     end
 
+    def delete_user_regres(id_user)
+      @uri_method = "/register/#{id_user}"
+      params = commom_regres_in(@uri_method)
+       execute_delete(params)
+    end
+
 
 
 end    

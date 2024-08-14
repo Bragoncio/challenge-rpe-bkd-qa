@@ -16,6 +16,11 @@ def execute_patch(params)
   HTTParty.patch(params[:uri], body: params[:body], headers: params[:headers])
 end
 
+def execute_delete(params)
+  HTTParty.delete(params[:uri], body: params[:body], headers: params[:headers])
+end
+
+
 
 def request_parse_json(request, message = "Response")
     return request.body if request.body.empty?
