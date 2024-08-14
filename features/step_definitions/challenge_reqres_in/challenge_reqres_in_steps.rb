@@ -63,3 +63,22 @@ Então('deve-se retornar as informações do usuário correspondente') do
   log_data("Validação do Get realizado com sucesso")
   @contract_schema = "challenge_reqres_in/reqres_get_single_user_200"
 end
+
+E('que possua um payload para atualização do usuario') do
+  @payload = put_users_payload
+end
+
+E('que eu possuo um ID válido de um usuário') do
+  @user_id = @response['id']
+end
+
+Quando('eu realizo uma requisição PUT com o ID do usuário e as informações a serem atualizadas') do
+  @response = ChallengeRegresInClient.new.validate_put_register_user_regres(@user_id, @payload)
+end
+
+Então('deve-se ter a confirmação da atualização do usuário no sistema') do
+  verify_status_code_request(@response, 200)
+  @response_parsed = request_parse_json(@response)
+  log_data("Validação do Get realizado com sucesso")
+  @contract_schema = "challenge_reqres_in/reqres_put_user_200"
+end

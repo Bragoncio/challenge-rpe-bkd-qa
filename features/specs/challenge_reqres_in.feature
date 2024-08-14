@@ -64,6 +64,16 @@ Funcionalidade: Fluxo completo do challenge reqres in
   #   Put Users                                                                            #
   ##################################################################################################
 
+  @put_update_user_by_id
+  Cenario: Realizar uma requisição PUT para atualizar um usuário por ID na plataforma Regres In
+    E possuo um payload valido para criação de pessoa
+    E forneço as informações de acordo com o formato requerido pelo serviço de criação de pessoa.
+    E deve se ter a confirmação do cadastro de pessoa física
+    E que eu possuo um ID válido de um usuário
+    E que possua um payload para atualização do usuario
+    Quando eu realizo uma requisição PUT com o ID do usuário e as informações a serem atualizadas
+    Então deve-se ter a confirmação da atualização do usuário no sistema
+    E o retorno da requisição deve seguir o contrato JSON esperado
 
 
 

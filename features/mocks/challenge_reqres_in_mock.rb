@@ -11,3 +11,11 @@ def register_users_payload
     "password": "pistol"
   }
 end
+
+
+def put_users_payload
+  {
+    "name": "RPE EDIT QA",
+    "job": "QAS leaders"
+  }
+end
