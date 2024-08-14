@@ -82,3 +82,18 @@ Então('deve-se ter a confirmação da atualização do usuário no sistema') do
   log_data("Validação do Get realizado com sucesso")
   @contract_schema = "challenge_reqres_in/reqres_put_user_200"
 end
+
+E('que possua um payload para atualização parcial do usuário') do
+  @payload = patch_users_payload
+end
+
+Quando('eu realizo uma requisição PATCH com o ID do usuário e as informações parciais a serem atualizadas') do
+  @response = ChallengeRegresInClient.new.validate_patch_user_regres(@user_id, @payload)
+end
+
+Então('deve-se ter a confirmação da atualização parcial do usuário no sistema') do
+  verify_status_code_request(@response, 200)
+  @response_parsed = request_parse_json(@response)
+  log_data("Validação do Get realizado com sucesso")
+  @contract_schema = "challenge_reqres_in/reqres_patch_user_200"
+end

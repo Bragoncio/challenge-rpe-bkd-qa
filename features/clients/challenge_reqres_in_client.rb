@@ -23,9 +23,14 @@ class ChallengeRegresInClient < ChallengeRegresInRequest
         return response_request
       end
 
-      
-    
-      def contract_schema_register_user(schema)
+    def validate_patch_user_regres(user_id, payload)
+      response_request = patch_register_users(user_id, payload)
+      return response_request
+    end
+
+
+
+    def contract_schema_register_user(schema)
         case schema
         when "email"
           "challenge_reqres_in/reqres_post_register_user_no_email_400"

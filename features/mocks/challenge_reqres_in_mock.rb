@@ -19,3 +19,9 @@ def put_users_payload
     "job": "QAS leaders"
   }
 end
+
+def patch_users_payload
+  {
+    "job": "QAS Specialist"
+  }
+end

@@ -2,9 +2,6 @@
   "description": "Validate sucess update user PATCH",
   "type": "object",
   "properties": {
-    "name": {
-      "type": "string"
-    },
     "job": {
       "type": "string"
     },
@@ -13,7 +10,6 @@
     }
   },
   "required": [
-    "name",
     "job",
     "updatedAt"
   ]
