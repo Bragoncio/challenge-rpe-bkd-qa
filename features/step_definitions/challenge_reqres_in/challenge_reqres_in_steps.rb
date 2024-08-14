@@ -79,7 +79,6 @@ end
 Então('deve-se ter a confirmação da atualização do usuário no sistema') do
   verify_status_code_request(@response, 200)
   @response_parsed = request_parse_json(@response)
-  log_data("Validação do Get realizado com sucesso")
   @contract_schema = "challenge_reqres_in/reqres_put_user_200"
 end
 
@@ -94,7 +93,6 @@ end
 Então('deve-se ter a confirmação da atualização parcial do usuário no sistema') do
   verify_status_code_request(@response, 200)
   @response_parsed = request_parse_json(@response)
-  log_data("Validação do Get realizado com sucesso")
   @contract_schema = "challenge_reqres_in/reqres_patch_user_200"
 end
 
@@ -107,5 +105,6 @@ Então('deve-se ter a confirmação da remoção do usuário no sistema') do
 end
 
 E('o retorno da requisição deve confirmar que o usuário foi excluído') do
-  pending # Write code here that turns the phrase above into concrete actions
+  get_response = ChallengeRegresInClient.new.validate_get_single_user_regres(@user_id)
+  verify_status_code_request(get_response, 404)
 end

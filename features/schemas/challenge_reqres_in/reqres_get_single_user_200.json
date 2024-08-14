@@ -8,25 +8,25 @@
         "id": {
           "type": "integer"
         },
-        "name": {
+        "email": {
           "type": "string"
         },
-        "year": {
-          "type": "integer"
-        },
-        "color": {
+        "first_name": {
           "type": "string"
         },
-        "pantone_value": {
+        "last_name": {
+          "type": "string"
+        },
+        "avatar": {
           "type": "string"
         }
       },
       "required": [
         "id",
-        "name",
-        "year",
-        "color",
-        "pantone_value"
+        "email",
+        "first_name",
+        "last_name",
+        "avatar"
       ]
     },
     "support": {

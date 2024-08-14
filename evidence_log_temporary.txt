@@ -1,32 +1,42 @@
 
- Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - URL Request: https://reqres.in/api/users 
+ Challenge Reqres Log: 2024-08-13 22:25:07 -0300 - URL Request: https://reqres.in/api/users 
 
- Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - Method Request: POST 
+ Challenge Reqres Log: 2024-08-13 22:25:07 -0300 - Method Request: POST 
 
- Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - DateHour Request: 2024-08-13 22:01:01 +0000 
+ Challenge Reqres Log: 2024-08-13 22:25:07 -0300 - DateHour Request: 2024-08-13 22:25:08 +0000 
 
- Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - Payload Enviado: {
+ Challenge Reqres Log: 2024-08-13 22:25:07 -0300 - Payload Enviado: {
   "name": "morpheus",
   "job": "leader"
 } 
 
- Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - HTTP Code Esperado: 201 - HTTP Code Recebido: 201 
+ Challenge Reqres Log: 2024-08-13 22:25:07 -0300 - HTTP Code Esperado: 201 - HTTP Code Recebido: 201 
 
- Challenge Reqres Log: 2024-08-13 22:01:00 -0300 - Response: {
+ Challenge Reqres Log: 2024-08-13 22:25:07 -0300 - Response: {
   "name": "morpheus",
   "job": "leader",
-  "id": "281",
-  "createdAt": "2024-08-14T01:01:01.335Z"
+  "id": "800",
+  "createdAt": "2024-08-14T01:25:08.242Z"
 } 
 
  Validação do Create realizada com sucesso 
 
- Challenge Reqres Log: 2024-08-13 22:01:01 -0300 - URL Request: https://reqres.in/api/register/281 
+ Challenge Reqres Log: 2024-08-13 22:25:08 -0300 - URL Request: https://reqres.in/api/users/800 
 
- Challenge Reqres Log: 2024-08-13 22:01:01 -0300 - Method Request: DELETE 
+ Challenge Reqres Log: 2024-08-13 22:25:08 -0300 - Method Request: DELETE 
 
- Challenge Reqres Log: 2024-08-13 22:01:01 -0300 - DateHour Request: 2024-08-13 22:01:01 +0000 
+ Challenge Reqres Log: 2024-08-13 22:25:08 -0300 - DateHour Request: 2024-08-13 22:25:08 +0000 
 
- Challenge Reqres Log: 2024-08-13 22:01:01 -0300 - A requisição não possui payload 
+ Challenge Reqres Log: 2024-08-13 22:25:08 -0300 - A requisição não possui payload 
 
- Challenge Reqres Log: 2024-08-13 22:01:01 -0300 - HTTP Code Esperado: 204 - HTTP Code Recebido: 204 
+ Challenge Reqres Log: 2024-08-13 22:25:08 -0300 - HTTP Code Esperado: 204 - HTTP Code Recebido: 204 
+
+ Challenge Reqres Log: 2024-08-13 22:25:08 -0300 - URL Request: https://reqres.in/api/users/800 
+
+ Challenge Reqres Log: 2024-08-13 22:25:08 -0300 - Method Request: GET 
+
+ Challenge Reqres Log: 2024-08-13 22:25:08 -0300 - DateHour Request: 2024-08-13 22:25:09 +0000 
+
+ Challenge Reqres Log: 2024-08-13 22:25:08 -0300 - A requisição não possui payload 
+
+ Challenge Reqres Log: 2024-08-13 22:25:08 -0300 - HTTP Code Esperado: 404 - HTTP Code Recebido: 404 

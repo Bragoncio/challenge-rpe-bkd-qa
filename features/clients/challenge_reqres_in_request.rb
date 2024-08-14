@@ -22,31 +22,28 @@ class ChallengeRegresInRequest
     end
 
     def get_single_users(id_user)
-      @uri_method = "/register/#{id_user}"
+      @uri_method = "/users/#{id_user}"
       params = commom_regres_in(@uri_method)
       execute_get(params)
     end
 
     def put_register_users(id_user, payload)
-      @uri_method = "/register/#{id_user}"
+      @uri_method = "/users/#{id_user}"
       params = commom_regres_in(@uri_method)
       params[:body] = payload.to_json
       execute_put(params)
     end
 
     def patch_register_users(id_user, payload)
-      @uri_method = "/register/#{id_user}"
+      @uri_method = "/users/#{id_user}"
       params = commom_regres_in(@uri_method)
       params[:body] = payload.to_json
       execute_put(params)
     end
 
     def delete_user_regres(id_user)
-      @uri_method = "/register/#{id_user}"
+      @uri_method = "/users/#{id_user}"
       params = commom_regres_in(@uri_method)
        execute_delete(params)
     end
-
-
-
-end    
+end
