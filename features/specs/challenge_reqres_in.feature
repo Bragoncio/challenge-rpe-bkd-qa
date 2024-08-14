@@ -34,6 +34,7 @@ Funcionalidade: Fluxo completo do challenge reqres in
     Então deve se ter a confirmação do usuario da pessoa cadastrado no sistema
     E o retorno da requisição deve seguir o contrato JSON esperado
 
+
     Esquema do Cenário: Validar o registro de usuario somente alguns objetos preenchidos
       E que o campo "<field>" não esteja preenchido no payload de registro
       Quando forneço as informações de acordo com o formato requerido pelo serviço de criação dos usuarios.
@@ -44,3 +45,26 @@ Funcionalidade: Fluxo completo do challenge reqres in
         | field    | code|       message_error       |
         | email    | 400  | Missing email or username |
         | password | 400  | Missing password          |
+
+  ##################################################################################################
+  #   GET Users                                                                            #
+  ##################################################################################################
+  @get_user_by_id
+  Cenario: Realizar uma requisição GET para consultar um usuário por ID na plataforma Regres In
+    E possuo um payload valido para registro de usuario
+    E forneço as informações de acordo com o formato requerido pelo serviço de criação dos usuarios.
+    E deve se ter a confirmação do usuario da pessoa cadastrado no sistema
+    E que eu possuo um ID válido de um usuário cadastrado
+    Quando eu realizo uma requisição GET com o ID do usuário
+    Então deve-se retornar as informações do usuário correspondente
+    E o retorno da requisição deve seguir o contrato JSON esperado
+
+
+  ##################################################################################################
+  #   Put Users                                                                            #
+  ##################################################################################################
+
+
+
+
+

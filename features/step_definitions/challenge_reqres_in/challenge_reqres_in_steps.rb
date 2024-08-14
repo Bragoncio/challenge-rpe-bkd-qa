@@ -48,3 +48,18 @@ Entao("o sistema não prossegue com a solicitação retornando a mensagem de err
   expect(@response['error']).to eq(message_error)
   @contract_schema = ChallengeRegresInClient.new.contract_schema_register_user(@field_payload)
 end
+
+E('que eu possuo um ID válido de um usuário cadastrado') do
+  @user_id = @response['id']
+end
+
+Quando('eu realizo uma requisição GET com o ID do usuário') do
+  @response = ChallengeRegresInClient.new.validate_get_single_user_regres(@user_id)
+end
+
+Então('deve-se retornar as informações do usuário correspondente') do
+  verify_status_code_request(@response, 200)
+  @response_parsed = request_parse_json(@response)
+  log_data("Validação do Get realizado com sucesso")
+  @contract_schema = "challenge_reqres_in/reqres_get_single_user_200"
+end

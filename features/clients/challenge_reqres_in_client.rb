@@ -12,6 +12,10 @@ class ChallengeRegresInClient < ChallengeRegresInRequest
         response_request = post_register_users(payload)
         return response_request
       end
+      def validate_get_single_user_regres(user_id)
+        response_request = get_single_users(user_id)
+        return response_request
+      end
     
       def contract_schema_register_user(schema)
         case schema

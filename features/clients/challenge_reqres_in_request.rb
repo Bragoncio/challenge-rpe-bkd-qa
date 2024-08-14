@@ -14,17 +14,16 @@ class ChallengeRegresInRequest
       execute_post(params)
     end
 
-    def post_create_person(payload)
-      @uri_method = '/users'
-      params = commom_regres_in(@uri_method)
-      params[:body] = payload.to_json
-      execute_post(params)
-    end
-  
     def post_register_users(payload)
       @uri_method = '/register'
       params = commom_regres_in(@uri_method)
       params[:body] = payload.to_json
       execute_post(params)
+    end
+
+    def get_single_users(id_user)
+      @uri_method = "/register/#{id_user}"
+      params = commom_regres_in(@uri_method)
+      execute_get(params)
     end
 end    
